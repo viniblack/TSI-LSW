@@ -18,7 +18,13 @@ let pessoa = {
   },
   perigo: function () {
     return this.imc() > 30 ? 'Perigo' : 'Ta de boa';
+  },
+  test: function () {
+    function testeFunc() {
+      return this.imc();
+    }
   }
 }
 
-console.log(pessoa.perigo());
+
+console.log(pessoa.test());

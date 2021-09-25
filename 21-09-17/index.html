@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Par ou Impar</title>
+  <script src="parImpar.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="container text-center">
+    <h1>Jogo do Par ou Impar</h1>
+    <button onclick="game.soma()" class="btn btn-lg btn-primary mt-5">Jogar</button>
+    <div class="row mt-5" style="height:500px;">
+      <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+        <h2>Jogador 1 <span id="jogador1"></span></h2>
+        <select id="escolha" class="form-select w-50">
+          <option selected disabled>Selecione entre Par ou Impar</option>
+          <option value="Par">Par</option>
+          <option value="Impar">Impar</option>
+        </select>
+        <h3 class="mt-5 fs-1" id="pontos1"></h3>
+      </div>
+      <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+        <h2>Jogador 2 <span id="jogador2"></span></h2>
+        <h3 class="mt-5 fs-1" id="pontos2"></h3>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
