@@ -14,18 +14,22 @@
     <h1>Jogo do Par ou Impar</h1>
     <button onclick="game.soma()" class="btn btn-lg btn-primary mt-5">Jogar</button>
     <div class="row mt-5" style="height:500px;">
+      <div style="position: absolute; right: 0; top: 15rem;">
+        <h3>Total: <span id="total">0</span></h3>
+        <p class="text-center" id="ganhador"></p>
+      </div>
       <div class="col-6 d-flex flex-column justify-content-center align-items-center">
-        <h2>Jogador 1 <span id="jogador1"></span></h2>
+        <h2>Jogador 1 <span id="jogador1">(0)</span></h2>
         <select id="escolha" class="form-select w-50">
           <option selected disabled>Selecione entre Par ou Impar</option>
           <option value="Par">Par</option>
           <option value="Impar">Impar</option>
         </select>
-        <h3 class="mt-5 fs-1" id="pontos1"></h3>
+        <h3 class="mt-5 fs-1" id="pontos1">0</h3>
       </div>
       <div class="col-6 d-flex flex-column justify-content-center align-items-center">
-        <h2>Jogador 2 <span id="jogador2"></span></h2>
-        <h3 class="mt-5 fs-1" id="pontos2"></h3>
+        <h2>Jogador 2 <span id="jogador2">(0)</span></h2>
+        <h3 class="mt-5 fs-1" id="pontos2">0</h3>
       </div>
     </div>
   </main>

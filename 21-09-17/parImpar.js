@@ -1,23 +1,35 @@
 let game = {
   soma: 0,
-  
+  pontosHumano: 0,
+  pontosMaquina: 0,
+
+  caulculaTotal: function () {
+    let total = humano.valor + maquina.valor;
+    document.getElementById('total').innerText = total;
+  },
   soma: function () {
     humano.escolhaHumano();
     maquina.dedoMaquina();
     humano.dedoHumano();
-
-
+    this.caulculaTotal();
     if ((maquina.valor + humano.valor) % 2 == 0) {
       if (humano.escolhaDoHumano == "Par") {
-        console.log('Humano ganhou')
+        document.getElementById('ganhador').innerText = 'Humano Ganhou';
+        document.getElementById('jogador1').innerText = '(' + this.pontosHumano++ + ')';
       } else {
-        console.log('Humano Perdeu')
+        document.getElementById('ganhador').innerText = 'Humano Perdeu'
+        document.getElementById('jogador2').innerText = '(' + this.pontosMaquina++ + ')';
+
       }
     } else {
       if (humano.escolhaDoHumano == "Impar") {
-        console.log('Humano ganhou')
+        document.getElementById('ganhador').innerText = 'Humano Ganhou'
+        document.getElementById('jogador1').innerText = '(' + this.pontosHumano++ + ')';
+
       } else {
-        console.log('Humano Perdeu')
+        document.getElementById('ganhador').innerText = 'Humano Perdeu'
+        document.getElementById('jogador2').innerText = '(' + this.pontosMaquina++ + ')';
+
       }
     }
   },
@@ -27,25 +39,25 @@ let game = {
 let maquina = {
   valor: 0,
   dedoMaquina: function () {
-    this.valor = Math.floor(Math.random() * 6);
+    let numMaquina = this.valor = Math.floor(Math.random() * 6);
+    document.getElementById('pontos2').innerText = numMaquina;
   },
-  pontosMaquina: document.getElementById('pontos2').innerText = '2',
+
+
 }
 
 let humano = {
   valor: 0,
-  pontos: 0, 
   escolhaDoHumano: '',
   pontosHumano: document.getElementById('pontos1'),
   dedoHumano: function () {
-    this.valor = Math.floor(Math.random() * 6);
+    let numHumano = this.valor = Math.floor(Math.random() * 6);
+    document.getElementById('pontos1').innerText = numHumano;
+
   },
   escolhaHumano: function () {
     let select = document.getElementById('escolha');
     let valor = document.getElementById('escolha').options[select.selectedIndex].value;
     this.escolhaDoHumano = valor;
-    console.log(`Humano escolheu ${valor}`);
   },
 }
-
-console.log(maquina.pontosMaquina);
